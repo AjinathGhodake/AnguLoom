@@ -5,7 +5,14 @@
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true
   },
-  "exclude": ["../src/test.ts", "../src/**/*.spec.ts"],
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../projects/**/*.spec.ts",
+    "../projects/**/e2e/**/*"
+  ],
   "include": ["../src/**/*.stories.*", "./preview.ts"],
   "files": ["./typings.d.ts"]
 }

@@ -1,0 +1,6 @@
+<button class="button__body" [disabled]="disabled">
+  <ng-content></ng-content>
+</button>
+<div class="button__overlay-container">
+  <div class="button__overlay" [@rippleAnimation]="_ripple"></div>
+</div>

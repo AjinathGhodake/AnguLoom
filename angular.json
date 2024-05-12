@@ -7,7 +7,8 @@
       "projectType": "library",
       "root": "projects/components",
       "sourceRoot": "projects/components/src",
-      "prefix": "lib",
+      "prefix": "loom",
+
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -28,10 +29,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/components/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         },
         "storybook": {
@@ -40,12 +38,7 @@
             "configDir": "projects/components/.storybook",
             "browserTarget": "components:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/components"
-            ],
+            "compodocArgs": ["-e", "json", "-d", "projects/components"],
             "port": 6006
           }
         },
@@ -55,13 +48,12 @@
             "configDir": "projects/components/.storybook",
             "browserTarget": "components:build",
             "compodoc": true,
-            "compodocArgs": [
-              "-e",
-              "json",
-              "-d",
-              "projects/components"
-            ],
-            "outputDir": "storybook-static"
+            "compodocArgs": ["-e", "json", "-d", "projects/components"],
+            "outputDir": "storybook-static",
+            "styles": [
+              "projects/components/common.css",
+              "projects/components/src/stories/styles.css"
+            ]
           }
         }
       }

@@ -3,5 +3,13 @@
   "dest": "../../dist/components",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    "./toaster.css",
+    "./common.css",
+    "./svg-set.js",
+    "./themes/**",
+    "./assets/**",
+    "./public/**"
+  ]
 }

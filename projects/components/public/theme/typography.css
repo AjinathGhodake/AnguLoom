@@ -1,0 +1,286 @@
+/**
+* Shortcuts used in CSS
+* hd : heading
+* fnt : font
+* wt : weight
+* fm : family
+* ltr : letter
+* spc : spacing
+* ln : line
+* hgt : height
+* bd : body
+* md : medium
+* sm : small
+* lg : large
+* btn : Button
+* tbl : table
+* ttl : title
+* lbl : label
+* inp : input
+* fld : fields
+* cpt : caption
+* lg : Large
+* md : medium
+* inp : input
+* plc : Placeholder
+* hld : holder
+* txt : text
+* er : error
+* hnt : hint
+*/
+
+@font-face {
+	font-family: roboto-black;
+	src: url("./fonts/Roboto-Black.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-black-italic;
+	src: url("./fonts/Roboto-BlackItalic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-bold;
+	src: url("./fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-bold-italic;
+	src: url("./fonts/Roboto-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-italic;
+	src: url("./fonts/Roboto-Italic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-light;
+	src: url("./fonts/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-light-italic;
+	src: url("./fonts/Roboto-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-medium;
+	src: url("./fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-medium-italic;
+	src: url("./fonts/Roboto-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-regular;
+	src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-thin;
+	src: url("./fonts/Roboto-Thin.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: roboto-thin-italic;
+	src: url("./fonts/Roboto-ThinItalic.ttf") format("truetype");
+}
+
+:root {
+	/**
+  * Headings font family
+  */
+	--hd-h1-font-family: "roboto-regular";
+
+	/**
+  * Headings font size
+  */
+
+	--hd-h1-font-size: 2.007em;
+	--hd-h2-font-size: 1.505em;
+	--hd-h3-font-size: 1.254em;
+	--hd-h4-font-size: 1.003em;
+	--hd-h5-font-size: 0.878em;
+
+	/**
+  * Headings font weight
+  */
+	--hd-h1-font-weight: bold;
+	--hd-h2-font-weight: bold;
+	--hd-h3-font-weight: bold;
+	--hd-h4-font-weight: bold;
+	--hd-h5-font-weight: bold;
+
+	/**
+  * Headings line height
+  */
+	--hd-h1-line-height: 3.011em;
+	--hd-h2-line-height: 2.258em;
+	--hd-h3-line-height: 1.882em;
+	--hd-h4-line-height: 1.505em;
+	--hd-h5-line-height: 1.254em;
+
+	/**
+  * Headings letter spacing
+  */
+	--hd-letter-spacing: 0;
+
+	/* ================================================== */
+
+	/**
+  * body-text font size
+  */
+	--bd-txt-lg-font-size: 1.003em;
+	--bd-txt-md-font-size: 0.878em;
+	--bd-txt-sm-font-size: 0.752em;
+
+	/**
+  * body-text line height
+  */
+	--bd-txt-lg-line-height: 1.505em;
+	--bd-txt-md-line-height: 1.8em;
+	--bd-txt-sm-line-height: 1.5em;
+
+	/**
+  * body-text font weight
+  */
+	--bd-txt-lg-font-weight: 500;
+	--bd-txt-md-font-weight: 400;
+	--bd-txt-sm-font-weight: 600;
+
+	/**
+  * body-text letter spacing
+  */
+	--bd-txt-letter-spacing: 0;
+
+	/* ================================================== */
+
+	/**
+  * Button Labels font size
+  */
+	--btn-lbl-lg-font-size: 1.003em;
+	--btn-lbl-sm-font-size: 0.878em;
+
+	/**
+  * Button Labels line height
+  */
+	--btn-lbl-lg-line-height: 1.505em;
+	--btn-lbl-sm-line-height: 1.254em;
+
+	/**
+  * Button Labels letter spacing
+  */
+	--btn-lbl-lg-letter-spacing: 0;
+
+	/* ================================================== */
+
+	/**
+  * Tables font size
+  */
+	--tbl-ttl-font-size: 1.003em;
+
+	/**
+  * Tables line height
+  */
+	--tbl-ttl-line-height: 1.505em;
+
+	/**
+  * Tables font weight
+  */
+	--tbl-ttl-font-weight: 1.505em;
+
+	/**
+  * Tables letter spacing
+  */
+	--tbl-ttl-letter-spacing: 0;
+
+	/* ================================================== */
+
+	/**
+  * Labels (Input fields) font size
+  */
+	--lbl-inp-fld-font-size: 0.752em;
+
+	/**
+  * Labels (Input fields) font weight
+  */
+	--lbl-inp-fld-font-weight: 500;
+
+	/**
+  * Labels (Input fields) letter spacing
+  */
+	--lbl-inp-fld-letter-spacing: 0;
+
+	/**
+  * Labels (Input fields) line height
+  */
+	--lbl-inp-fld-line-height: 1.129em;
+
+	/* ================================================== */
+
+	/**
+  * Captions (Sub titles, Metadata) font size
+  */
+	--cpt-lg-font-size: 0.878em;
+	--cpt-md-font-size: 0.752em;
+
+	/**
+  * Captions (Sub titles, Metadata) font wight
+  */
+	--cpt-lg-font-weight: 500; /* need to confirm */
+	--cpt-md-font-weight: 400;
+
+	/**
+  * Captions (Sub titles, Metadata) letter spacing
+  */
+	--cpt-lg-ltr-spc: 0;
+
+	/**
+  * Captions (Sub titles, Metadata) line height
+  */
+	--cpt-lg-line-height: 1.254em;
+	--cpt-md-line-height: 1.129em;
+
+	/* ================================================== */
+
+	/**
+  * Input Fields font size
+  */
+	--inp-plc-hld-font-size: 1.003em;
+	--inp-txt-font-size: 1.003em;
+	--inp-er-font-size: 0.752em;
+	--inp-txt-hnt-font-size: 0.752em;
+
+	/**
+  * Input Fields line hight
+  */
+	--inp-plc-hld-line-height: 1.505em;
+	--inp-txt-line-height: 1.505em;
+	--inp-er-line-height: 1.129em;
+	--inp-hnt-line-height: 1.129em;
+
+	/* ================================================== */
+
+	/**
+  * Common font family
+  */
+	--font-family-regular: roboto-regular;
+	--font-family-medium: roboto-medium;
+	--font-weight-medium: 500;
+	--font-weight-regular: 400;
+	--font-family-black: roboto-black;
+	--font-family-black-italic: roboto-black-italic;
+	--font-family-bold: roboto-bold;
+	--font-family-bold-italic: roboto-bold-italic;
+	--font-family-italic: roboto-italic;
+	--font-family-light: roboto-light;
+	--font-family-light-italic: roboto-light-italic;
+	--font-family-medium-italic: roboto-medium-italic;
+	--font-family-thin: roboto-thin;
+	--font-family-thin-italic: roboto-thin-italic;
+
+	/* ================================================== */
+}

@@ -1,0 +1,60 @@
+@import "~@angular/cdk/overlay-prebuilt.css";
+.separator__horizontal--dark {
+  border-bottom: 1px solid var(--blue-grey-500);
+}
+
+.separator__horizontal--light {
+  border-bottom: 1px solid var(--blue-grey-400);
+}
+
+.table__divider {
+  border-bottom: 1px solid var(--blue-grey-500);
+}
+
+.table__divider:last-child {
+  border-bottom: 0;
+}
+
+.separator__vertical--dark {
+  border-right: 2px solid var(--blue-grey-500);
+  width: 2px;
+}
+
+.separator__vertical--light {
+  border-right: 2px solid var(--blue-grey-400);
+  width: 2px;
+}
+
+/**   Thick Scrollbar */
+
+.scroll-thick::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: var(--blue-grey-500);
+}
+
+.scroll-thick::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.scroll-thick::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--blue-grey-600);
+}
+
+/**   Thin Scrollbar */
+
+.scroll-thin::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: var(--blue-grey-400);
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+.scroll-thin::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--blue-grey-600);
+}

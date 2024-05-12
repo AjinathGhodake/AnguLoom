@@ -1,0 +1,11 @@
+@import "../projects/bsx-components/themes/theme-colors.css";
+@import "../projects/bsx-components/themes/typography.css";
+@import "~@angular/cdk/overlay-prebuilt.css";
+@import "../projects/bsx-components/toaster.css";
+
+/* You can add global styles to this file, and also import other style files */
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}

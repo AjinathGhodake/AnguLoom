@@ -11,16 +11,6 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/components/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
-            },
-            {
                 "name": "LoggedIn",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -67,8 +57,8 @@
                 "file": "projects/components/src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
+                "type": "Meta<ButtonDefaultComponent>",
+                "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonDefaultComponent,\n  tags: ['autodocs'],\n}"
             },
             {
                 "name": "meta",
@@ -108,27 +98,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/components/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/components/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n  argTypes: {\n    type: {\n      name: 'type',\n      table: {\n        category: 'Input',\n        type: {\n          summary:\n            \"'primary-default'| 'primary-alert'| 'primary-calling'| 'primary-proceed'| 'secondary'| 'tertiary'\",\n        },\n      },\n    },\n    size: {\n      name: 'size',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'xs' | 's' | 'm' | 'l'\",\n        },\n      },\n    },\n    disabled: {\n      name: 'disabled',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'boolean'|'true' | 'false'\",\n        },\n      },\n    },\n    _hostClass: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnChanges: {\n      table: {\n        disable: true,\n      },\n    },\n    buttonClicked: {\n      table: {\n        disable: true,\n      },\n    },\n    _ripple: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n  args: {\n    type: 'primary-default',\n    size: 'l',\n    disabled: false,\n  },\n  render: (args: ButtonDefaultComponent) => ({\n    props: {\n      ...args,\n    },\n    template: `<loom-button-default [type]=\"type\" [size]=\"size\" [disabled]=\"disabled\">\n    click me!\n  </loom-button-default>`,\n  }),\n}"
             }
         ],
         "functions": [],
@@ -137,7 +107,7 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
+                "rawtype": "StoryObj<ButtonDefaultComponent>",
                 "file": "projects/components/src/stories/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -169,58 +139,6 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/components/src/stories/button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
-                }
-            ],
             "projects/components/src/stories/header.stories.ts": [
                 {
                     "name": "LoggedIn",
@@ -285,6 +203,28 @@
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
+            "projects/components/src/stories/button.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/components/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonDefaultComponent>",
+                    "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonDefaultComponent,\n  tags: ['autodocs'],\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/components/src/stories/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  argTypes: {\n    type: {\n      name: 'type',\n      table: {\n        category: 'Input',\n        type: {\n          summary:\n            \"'primary-default'| 'primary-alert'| 'primary-calling'| 'primary-proceed'| 'secondary'| 'tertiary'\",\n        },\n      },\n    },\n    size: {\n      name: 'size',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'xs' | 's' | 'm' | 'l'\",\n        },\n      },\n    },\n    disabled: {\n      name: 'disabled',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'boolean'|'true' | 'false'\",\n        },\n      },\n    },\n    _hostClass: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnChanges: {\n      table: {\n        disable: true,\n      },\n    },\n    buttonClicked: {\n      table: {\n        disable: true,\n      },\n    },\n    _ripple: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n  args: {\n    type: 'primary-default',\n    size: 'l',\n    disabled: false,\n  },\n  render: (args: ButtonDefaultComponent) => ({\n    props: {\n      ...args,\n    },\n    template: `<loom-button-default [type]=\"type\" [size]=\"size\" [disabled]=\"disabled\">\n    click me!\n  </loom-button-default>`,\n  }),\n}"
+                }
+            ],
             "projects/components/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -306,7 +246,7 @@
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ButtonComponent>",
+                    "rawtype": "StoryObj<ButtonDefaultComponent>",
                     "file": "projects/components/src/stories/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -362,16 +302,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/components/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -383,26 +313,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/components/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/components/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

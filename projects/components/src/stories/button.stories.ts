@@ -1,48 +1,80 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
-import { ButtonComponent } from './button.component';
+import { ButtonDefaultComponent } from '../lib/button/button-default/button-default.component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-const meta: Meta<ButtonComponent> = {
+const meta: Meta<ButtonDefaultComponent> = {
   title: 'Example/Button',
-  component: ButtonComponent,
+  component: ButtonDefaultComponent,
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
 };
 
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<ButtonDefaultComponent>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
-  args: {
-    primary: true,
-    label: 'Button',
+  argTypes: {
+    type: {
+      name: 'type',
+      table: {
+        category: 'Input',
+        type: {
+          summary:
+            "'primary-default'| 'primary-alert'| 'primary-calling'| 'primary-proceed'| 'secondary'| 'tertiary'",
+        },
+      },
+    },
+    size: {
+      name: 'size',
+      table: {
+        category: 'Input',
+        type: {
+          summary: "'xs' | 's' | 'm' | 'l'",
+        },
+      },
+    },
+    disabled: {
+      name: 'disabled',
+      table: {
+        category: 'Input',
+        type: {
+          summary: "'boolean'|'true' | 'false'",
+        },
+      },
+    },
+    _hostClass: {
+      table: {
+        disable: true,
+      },
+    },
+    ngOnChanges: {
+      table: {
+        disable: true,
+      },
+    },
+    buttonClicked: {
+      table: {
+        disable: true,
+      },
+    },
+    _ripple: {
+      table: {
+        disable: true,
+      },
+    },
   },
-};
-
-export const Secondary: Story = {
   args: {
-    label: 'Button',
+    type: 'primary-default',
+    size: 'l',
+    disabled: false,
   },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
+  render: (args: ButtonDefaultComponent) => ({
+    props: {
+      ...args,
+    },
+    template: `<loom-button-default [type]="type" [size]="size" [disabled]="disabled">
+    click me!
+  </loom-button-default>`,
+  }),
 };
