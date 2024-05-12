@@ -38,7 +38,7 @@ export class IconComponent implements OnChanges {
     try {
       let icon: Node | null = null;
       const iconSplit = this._icon.split(':');
-      const iconSetProvided = iconSplit.length >= 1;
+      const iconSetProvided = iconSplit.length > 1;
       const iconSetName = iconSetProvided ? iconSplit.shift() : 'default';
       const iconName = iconSetProvided ? iconSplit.pop() : this._icon;
       const iconSet = document.head.querySelector(
