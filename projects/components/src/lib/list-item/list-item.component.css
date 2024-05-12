@@ -1,0 +1,57 @@
+:host {
+  color: var(--text-900);
+  font-size: 14px;
+  line-height: 20px;
+  padding: 12px 16px;
+  background-color: var(--white);
+  font-family: var(--font-family-regular);
+  font-weight: var(--font-weight-regular);
+  display: inline-block;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+
+:host:hover {
+  background-color: var(--text-500);
+}
+
+:host.list__metadata-container {
+  font-weight: var(--bd-txt-lg-font-weight);
+}
+
+:host.non-clickable {
+  background-color: var(--neutral);
+  color: var(--text-700);
+  font-size: 12px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 16px;
+  line-height: 18px;
+  pointer-events: none;
+  cursor: default;
+}
+
+.list__metadata {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--text-800);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+:host.active {
+  background-color: var(--blue-grey-400);
+}
+
+.list__wrapper-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.list__wrapper-checkbox .list__checkbox {
+  margin-right: 8px;
+}
+
+.list__wrapper-label {
+  cursor: pointer;
+}

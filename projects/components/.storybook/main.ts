@@ -18,9 +18,5 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   staticDirs: ['../public'],
-  webpackFinal: async (config, { configType }) => {
-    // Make sure to return the config object
-    return config;
-  },
 };
 export default config;

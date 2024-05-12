@@ -1,0 +1,45 @@
+<button
+  [ngClass]="{
+    'show-above-overlay': isPanelOpen
+  }"
+  cdkOverlayOrigin
+  #origin="cdkOverlayOrigin"
+  class="button__body"
+  [disabled]="disabled"
+>
+  <ng-content select="[button-content]"></ng-content>
+  <loom-icon
+    class="button__dropdown"
+    [ngClass]="{
+      'icon--disabled': disabled === true
+    }"
+    [icon]="icon"
+    [@indicatorRotate]="isPanelOpen"
+  >
+  </loom-icon>
+</button>
+
+<div class="button__overlay-container">
+  <div class="button__overlay" [@rippleAnimation]="_ripple"></div>
+</div>
+dsfsd
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="origin"
+  [cdkConnectedOverlayOpen]="isPanelOpen"
+  [cdkConnectedOverlayPositions]="_positions"
+  cdkConnectedOverlayLockPosition
+  cdkConnectedOverlayHasBackdrop="true"
+  [cdkConnectedOverlayPanelClass]="'bsx-cdk-overlay-pane-custom'"
+  [cdkConnectedOverlayBackdropClass]="'bsx-cdk-overlay-backdrop'"
+  [cdkConnectedOverlayMinWidth]="200"
+  (backdropClick)="closeDropdown()"
+>
+  <loom-card
+    class="dropdown__card"
+    cardType="dropdown-card"
+    (mouseleave)="closeOnMouseLeave()"
+  >
+    <ng-content select="[button-dropdown]"></ng-content>
+  </loom-card>
+</ng-template>

@@ -1,0 +1,16 @@
+<div [ngClass]="{ 'list__wrapper-checkbox': multiSelect }">
+  <loom-checkbox
+    *ngIf="multiSelect"
+    class="list__checkbox"
+    [isDisable]="nonClickable"
+    [checkboxId]="id"
+    [checked]="selected"
+  >
+  </loom-checkbox>
+  <label [ngClass]="nonClickable ? '' : 'list__wrapper-label'" #label>
+    <ng-content></ng-content>
+  </label>
+</div>
+<div [ngClass]="{ list__metadata: isMetadata }" #content>
+  <ng-content select="[subtext]"></ng-content>
+</div>

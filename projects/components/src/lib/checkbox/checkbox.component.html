@@ -1,0 +1,30 @@
+<div class="checkbox__container">
+  <input
+    [id]="checkboxId"
+    [disabled]="isDisable"
+    (click)="clickEvent($event.target)"
+    type="checkbox"
+    [ngClass]="{
+      checkbox__input: !isDisable,
+      'checkbox__input--disabled': isDisable
+    }"
+    [checked]="checked"
+  />
+  <span
+    [ngClass]="{
+      'checkbox__check-mark': !isDisable,
+      'checkbox__check-mark--disabled': isDisable
+    }"
+  ></span>
+
+  <label
+    [for]="checkboxId"
+    [ngClass]="{
+      checkbox__label: !isDisable,
+      'checkbox__label--disabled': isDisable
+    }"
+    class="checkbox__label"
+  >
+    <ng-content></ng-content>
+  </label>
+</div>

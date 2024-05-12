@@ -4,81 +4,102 @@
     "injectables": [],
     "guards": [],
     "interceptors": [],
-    "classes": [],
+    "classes": [
+        {
+            "name": "MockChangeDetectorRef",
+            "id": "class-MockChangeDetectorRef-3f3f637dd9fde31ac33be4da65f433f76108d0e44e5524048755eae5fc17508ab47fb5280683a6b69c3570a05eeff6e5c874eced9a73ccd8c2f667f85998bf3f",
+            "file": "projects/components/src/stories/button/buttonDropdown.stories.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import {\n  moduleMetadata,\n  type Meta,\n  type StoryObj,\n  applicationConfig,\n} from '@storybook/angular';\nimport { fn } from '@storybook/test';\nimport { ButtonDropdownComponent } from '../../lib/button/button-dropdown/button-dropdown.component';\nimport { importProvidersFrom } from '@angular/core';\nimport { OverlayModule } from '@angular/cdk/overlay';\nimport { CommonModule } from '@angular/common';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { ChangeDetectorRef } from '@angular/core';\nimport { IconComponent } from '../../lib/icon/icon.component';\nimport { ListItemComponent } from '../../lib/list-item/list-item.component';\n\nclass MockChangeDetectorRef extends ChangeDetectorRef {\n  markForCheck(): void {}\n  detach(): void {}\n  detectChanges(): void {}\n  checkNoChanges(): void {}\n  reattach(): void {}\n}\n\n// More on how to set up stories at: https://storybook.js.org/docs/writing-stories\nconst meta: Meta<ButtonDropdownComponent> = {\n  title: 'Components/Button.dropdown',\n  component: ButtonDropdownComponent,\n  tags: ['autodocs'],\n  decorators: [\n    applicationConfig({\n      providers: [importProvidersFrom(BrowserAnimationsModule)],\n    }),\n    moduleMetadata({\n      imports: [\n        OverlayModule,\n        CommonModule,\n        BrowserAnimationsModule,\n        IconComponent,\n        ListItemComponent,\n      ],\n      providers: [\n        { provide: ChangeDetectorRef, useClass: MockChangeDetectorRef },\n      ],\n    }),\n  ],\n};\n\nexport default meta;\ntype Story = StoryObj<ButtonDropdownComponent>;\n\n// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args\nexport const Primary: Story = {\n  argTypes: {\n    type: {\n      name: 'type',\n      table: {\n        category: 'Input',\n        type: {\n          summary:\n            \"'primary-default'| 'primary-alert'| 'primary-calling'| 'primary-proceed'| 'secondary'| 'tertiary'\",\n        },\n      },\n    },\n    size: {\n      name: 'size',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'xs' | 's' | 'm' | 'l'\",\n        },\n      },\n    },\n    disabled: {\n      name: 'disabled',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'boolean'|'true' | 'false'\",\n        },\n      },\n    },\n    _hostClass: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnChanges: {\n      table: {\n        disable: true,\n      },\n    },\n    buttonClicked: {\n      table: {\n        disable: true,\n      },\n    },\n    _ripple: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n  args: {\n    type: 'primary-default',\n    size: 'l',\n    disabled: false,\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n      optionList: [\n        { selected: false, value: 'one' },\n        { selected: false, value: 'two' },\n      ],\n    },\n\n    template: `<loom-button-dropdown [type]=\"type\" [size]=\"size\" [disabled]=\"disabled\"><loom-list-item button-dropdown *ngFor=\"let option of optionList\" [value]=\"option.value\" [selected]=\"option.selected\">{{ option.value }}</loom-list-item><loom-icon button-content icon=\"md-call-white\"></loom-icon> </loom-button-dropdown>`,\n  }),\n};\n",
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [],
+            "methods": [
+                {
+                    "name": "checkNoChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "detach",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "detectChanges",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "markForCheck",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "reattach",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "indexSignatures": [],
+            "extends": [
+                "ChangeDetectorRef"
+            ],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
     "directives": [],
     "components": [],
     "modules": [],
     "miscellaneous": {
         "variables": [
             {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/components/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/components/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/components/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{}"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/components/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{}"
-            },
-            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/components/src/stories/button.stories.ts",
+                "file": "projects/components/src/stories/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonDefaultComponent>",
-                "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonDefaultComponent,\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\n  title: 'Components/Button',\n  component: ButtonDefaultComponent,\n  tags: ['autodocs'],\n  decorators: [\n    applicationConfig({\n      providers: [importProvidersFrom(BrowserAnimationsModule)],\n    }),\n    moduleMetadata({\n      imports: [OverlayModule, CommonModule],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/components/src/stories/header.stories.ts",
+                "file": "projects/components/src/stories/button/buttonDropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/components/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<PageComponent>",
-                "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                "type": "Meta<ButtonDropdownComponent>",
+                "defaultValue": "{\n  title: 'Components/Button.dropdown',\n  component: ButtonDropdownComponent,\n  tags: ['autodocs'],\n  decorators: [\n    applicationConfig({\n      providers: [importProvidersFrom(BrowserAnimationsModule)],\n    }),\n    moduleMetadata({\n      imports: [\n        OverlayModule,\n        CommonModule,\n        BrowserAnimationsModule,\n        IconComponent,\n        ListItemComponent,\n      ],\n      providers: [\n        { provide: ChangeDetectorRef, useClass: MockChangeDetectorRef },\n      ],\n    }),\n  ],\n}"
             },
             {
                 "name": "preview",
@@ -94,11 +115,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/components/src/stories/button.stories.ts",
+                "file": "projects/components/src/stories/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  argTypes: {\n    type: {\n      name: 'type',\n      table: {\n        category: 'Input',\n        type: {\n          summary:\n            \"'primary-default'| 'primary-alert'| 'primary-calling'| 'primary-proceed'| 'secondary'| 'tertiary'\",\n        },\n      },\n    },\n    size: {\n      name: 'size',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'xs' | 's' | 'm' | 'l'\",\n        },\n      },\n    },\n    disabled: {\n      name: 'disabled',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'boolean'|'true' | 'false'\",\n        },\n      },\n    },\n    _hostClass: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnChanges: {\n      table: {\n        disable: true,\n      },\n    },\n    buttonClicked: {\n      table: {\n        disable: true,\n      },\n    },\n    _ripple: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n  args: {\n    type: 'primary-default',\n    size: 'l',\n    disabled: false,\n  },\n  render: (args: ButtonDefaultComponent) => ({\n    props: {\n      ...args,\n    },\n    template: `<loom-button-default [type]=\"type\" [size]=\"size\" [disabled]=\"disabled\">\n    click me!\n  </loom-button-default>`,\n  }),\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/components/src/stories/button/buttonDropdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  argTypes: {\n    type: {\n      name: 'type',\n      table: {\n        category: 'Input',\n        type: {\n          summary:\n            \"'primary-default'| 'primary-alert'| 'primary-calling'| 'primary-proceed'| 'secondary'| 'tertiary'\",\n        },\n      },\n    },\n    size: {\n      name: 'size',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'xs' | 's' | 'm' | 'l'\",\n        },\n      },\n    },\n    disabled: {\n      name: 'disabled',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'boolean'|'true' | 'false'\",\n        },\n      },\n    },\n    _hostClass: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnChanges: {\n      table: {\n        disable: true,\n      },\n    },\n    buttonClicked: {\n      table: {\n        disable: true,\n      },\n    },\n    _ripple: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n  args: {\n    type: 'primary-default',\n    size: 'l',\n    disabled: false,\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n      optionList: [\n        { selected: false, value: 'one' },\n        { selected: false, value: 'two' },\n      ],\n    },\n\n    template: `<loom-button-dropdown [type]=\"type\" [size]=\"size\" [disabled]=\"disabled\"><loom-list-item button-dropdown *ngFor=\"let option of optionList\" [value]=\"option.value\" [selected]=\"option.selected\">{{ option.value }}</loom-list-item><loom-icon button-content icon=\"md-call-white\"></loom-icon> </loom-button-dropdown>`,\n  }),\n}"
             }
         ],
         "functions": [],
@@ -108,7 +139,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonDefaultComponent>",
-                "file": "projects/components/src/stories/button.stories.ts",
+                "file": "projects/components/src/stories/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -118,19 +149,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/components/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<PageComponent>",
-                "file": "projects/components/src/stories/page.stories.ts",
+                "rawtype": "StoryObj<ButtonDropdownComponent>",
+                "file": "projects/components/src/stories/button/buttonDropdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -139,90 +159,48 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/components/src/stories/header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{}"
-                },
+            "projects/components/src/stories/button/button.stories.ts": [
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/components/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-                }
-            ],
-            "projects/components/src/stories/page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<PageComponent>",
-                    "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
-                }
-            ],
-            "projects/components/src/stories/button.stories.ts": [
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/components/src/stories/button.stories.ts",
+                    "file": "projects/components/src/stories/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonDefaultComponent>",
-                    "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonDefaultComponent,\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\n  title: 'Components/Button',\n  component: ButtonDefaultComponent,\n  tags: ['autodocs'],\n  decorators: [\n    applicationConfig({\n      providers: [importProvidersFrom(BrowserAnimationsModule)],\n    }),\n    moduleMetadata({\n      imports: [OverlayModule, CommonModule],\n    }),\n  ],\n}"
                 },
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/components/src/stories/button.stories.ts",
+                    "file": "projects/components/src/stories/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  argTypes: {\n    type: {\n      name: 'type',\n      table: {\n        category: 'Input',\n        type: {\n          summary:\n            \"'primary-default'| 'primary-alert'| 'primary-calling'| 'primary-proceed'| 'secondary'| 'tertiary'\",\n        },\n      },\n    },\n    size: {\n      name: 'size',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'xs' | 's' | 'm' | 'l'\",\n        },\n      },\n    },\n    disabled: {\n      name: 'disabled',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'boolean'|'true' | 'false'\",\n        },\n      },\n    },\n    _hostClass: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnChanges: {\n      table: {\n        disable: true,\n      },\n    },\n    buttonClicked: {\n      table: {\n        disable: true,\n      },\n    },\n    _ripple: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n  args: {\n    type: 'primary-default',\n    size: 'l',\n    disabled: false,\n  },\n  render: (args: ButtonDefaultComponent) => ({\n    props: {\n      ...args,\n    },\n    template: `<loom-button-default [type]=\"type\" [size]=\"size\" [disabled]=\"disabled\">\n    click me!\n  </loom-button-default>`,\n  }),\n}"
+                }
+            ],
+            "projects/components/src/stories/button/buttonDropdown.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/components/src/stories/button/buttonDropdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonDropdownComponent>",
+                    "defaultValue": "{\n  title: 'Components/Button.dropdown',\n  component: ButtonDropdownComponent,\n  tags: ['autodocs'],\n  decorators: [\n    applicationConfig({\n      providers: [importProvidersFrom(BrowserAnimationsModule)],\n    }),\n    moduleMetadata({\n      imports: [\n        OverlayModule,\n        CommonModule,\n        BrowserAnimationsModule,\n        IconComponent,\n        ListItemComponent,\n      ],\n      providers: [\n        { provide: ChangeDetectorRef, useClass: MockChangeDetectorRef },\n      ],\n    }),\n  ],\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/components/src/stories/button/buttonDropdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  argTypes: {\n    type: {\n      name: 'type',\n      table: {\n        category: 'Input',\n        type: {\n          summary:\n            \"'primary-default'| 'primary-alert'| 'primary-calling'| 'primary-proceed'| 'secondary'| 'tertiary'\",\n        },\n      },\n    },\n    size: {\n      name: 'size',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'xs' | 's' | 'm' | 'l'\",\n        },\n      },\n    },\n    disabled: {\n      name: 'disabled',\n      table: {\n        category: 'Input',\n        type: {\n          summary: \"'boolean'|'true' | 'false'\",\n        },\n      },\n    },\n    _hostClass: {\n      table: {\n        disable: true,\n      },\n    },\n    ngOnChanges: {\n      table: {\n        disable: true,\n      },\n    },\n    buttonClicked: {\n      table: {\n        disable: true,\n      },\n    },\n    _ripple: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n  args: {\n    type: 'primary-default',\n    size: 'l',\n    disabled: false,\n  },\n  render: ({ ...args }) => ({\n    props: {\n      ...args,\n      optionList: [\n        { selected: false, value: 'one' },\n        { selected: false, value: 'two' },\n      ],\n    },\n\n    template: `<loom-button-dropdown [type]=\"type\" [size]=\"size\" [disabled]=\"disabled\"><loom-list-item button-dropdown *ngFor=\"let option of optionList\" [value]=\"option.value\" [selected]=\"option.selected\">{{ option.value }}</loom-list-item><loom-icon button-content icon=\"md-call-white\"></loom-icon> </loom-button-dropdown>`,\n  }),\n}"
                 }
             ],
             "projects/components/.storybook/preview.ts": [
@@ -241,39 +219,26 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/components/src/stories/button.stories.ts": [
+            "projects/components/src/stories/button/button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonDefaultComponent>",
-                    "file": "projects/components/src/stories/button.stories.ts",
+                    "file": "projects/components/src/stories/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 183
                 }
             ],
-            "projects/components/src/stories/header.stories.ts": [
+            "projects/components/src/stories/button/buttonDropdown.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/components/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/components/src/stories/page.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<PageComponent>",
-                    "file": "projects/components/src/stories/page.stories.ts",
+                    "rawtype": "StoryObj<ButtonDropdownComponent>",
+                    "file": "projects/components/src/stories/button/buttonDropdown.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -298,7 +263,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/components/src/stories/button.stories.ts",
+                "filePath": "projects/components/src/stories/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -308,7 +273,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/components/src/stories/button.stories.ts",
+                "filePath": "projects/components/src/stories/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -318,27 +283,16 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/components/src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
+                "filePath": "projects/components/src/stories/button/buttonDropdown.stories.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "MockChangeDetectorRef",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
-                "filePath": "projects/components/src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/components/src/stories/header.stories.ts",
+                "filePath": "projects/components/src/stories/button/buttonDropdown.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -348,31 +302,11 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/components/src/stories/page.stories.ts",
+                "filePath": "projects/components/src/stories/button/buttonDropdown.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/components/src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/components/src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

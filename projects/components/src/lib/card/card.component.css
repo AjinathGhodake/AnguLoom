@@ -1,0 +1,60 @@
+:host {
+  display: block;
+}
+
+:host.section-card {
+  border-radius: 4px;
+  background-color: var(--white);
+  box-shadow: 0 1px 4px 0 rgb(69 90 100 / 20%);
+}
+
+:host.dropdown-card {
+  border-radius: 4px;
+  background-color: var(--white);
+  box-shadow: 0 4px 8px 0 rgb(69 90 100 / 24%);
+}
+
+:host.dialogue-card {
+  border-radius: 4px;
+  background-color: var(--white);
+  box-shadow: 0 12px 24px 0 rgb(69 90 100 / 24%);
+}
+
+:host.non-radius-card {
+  background-color: var(--white);
+  box-shadow: 0 1px 4px 0 rgb(69 90 100 / 20%);
+}
+
+:host.disabled {
+  border-radius: 4px;
+  background-color: var(--text-300);
+}
+
+:host.section-card.actionable:hover,
+:host.dropdown-card.actionable:hover,
+:host.dialogue-card.actionable:hover,
+:host.non-radius-card.actionable:hover {
+  box-shadow: 0 4px 8px 0 rgb(69 90 100 / 24%);
+}
+
+:host.meeting-card {
+  background-color: var(--text-300);
+}
+
+:host.activity-card {
+  background-color: var(--structural-background-blue);
+}
+
+:host.meeting-card.actionable:hover,
+:host.activity-card.actionable:hover {
+  box-shadow: 0 2px 4px 0 rgb(69 90 100 / 16%);
+}
+
+.card__title {
+  padding: 16px;
+  color: var(--blue-grey-900);
+  line-height: var(--bd-txt-lg-line-height);
+  font-size: var(--bd-txt-lg-font-size);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-medium);
+}

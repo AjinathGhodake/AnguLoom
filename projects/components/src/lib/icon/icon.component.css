@@ -1,0 +1,19 @@
+:host {
+  display: inline-block;
+  line-height: 0;
+}
+
+:host.small {
+  height: 24px;
+  width: 24px;
+}
+
+:host.medium {
+  height: 32px;
+  width: 32px;
+}
+
+:host.large {
+  height: 72px;
+  width: 72px;
+}

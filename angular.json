@@ -39,7 +39,14 @@
             "browserTarget": "components:build",
             "compodoc": true,
             "compodocArgs": ["-e", "json", "-d", "projects/components"],
-            "port": 6006
+            "port": 6006,
+
+            "styles": [
+              "projects/components/public/common.css",
+              "projects/components/public/theme/theme-colors.css",
+              "projects/components/public/theme/typography.css",
+              "@angular/cdk/overlay-prebuilt.css"
+            ]
           }
         },
         "build-storybook": {
@@ -50,9 +57,12 @@
             "compodoc": true,
             "compodocArgs": ["-e", "json", "-d", "projects/components"],
             "outputDir": "storybook-static",
+            "scripts": ["projects/components/public/svg-set.js"],
             "styles": [
-              "projects/components/common.css",
-              "projects/components/src/stories/styles.css"
+              "projects/components/public/common.css",
+              "projects/components/public/theme/theme-colors.css",
+              "projects/components/public/theme/typography.css",
+              "node_modules/@angular/cdk/overlay-prebuilt.css"
             ]
           }
         }

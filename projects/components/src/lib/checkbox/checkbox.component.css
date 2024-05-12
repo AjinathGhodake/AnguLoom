@@ -1,0 +1,121 @@
+:host {
+  border-radius: 2px;
+  display: flex;
+}
+
+.checkbox__container {
+  display: flex;
+  position: relative;
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  z-index: 1;
+}
+
+.checkbox__input--disabled {
+  position: absolute;
+  opacity: 0;
+  cursor: default;
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  z-index: 1;
+}
+
+.checkbox__check-mark {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: var(--white);
+  border-radius: 2px;
+  border: 2px solid var(--primary-brand-color);
+  box-sizing: border-box;
+}
+
+.checkbox__check-mark--disabled {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background-color: var(--white);
+  border-radius: 2px;
+  border: 2px solid var(--text-600);
+  box-sizing: border-box;
+}
+
+.checkbox__check-mark::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.checkbox__check-mark--disabled::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+input:checked ~ .checkbox__check-mark--disabled {
+  background-color: var(--text-600);
+  border-width: 0;
+  transition: all ease-in 400ms;
+}
+
+input:checked ~ .checkbox__check-mark {
+  background-color: var(--primary-brand-color);
+  border-width: 0;
+  transition: all ease-in 400ms;
+}
+
+input:checked ~ .checkbox__check-mark--disabled::after {
+  display: inline-block;
+}
+
+input:checked ~ .checkbox__check-mark::after {
+  display: inline-block;
+}
+
+.checkbox__label {
+  margin-left: 4px;
+  cursor: pointer;
+  line-height: 20px;
+  font-family: var(--font-family-regular);
+  font-weight: var(--font-weight-regular);
+}
+
+.checkbox__label--disabled {
+  margin-left: 4px;
+  cursor: default;
+  line-height: 20px;
+  color: var(--text-700);
+  font-family: var(--font-family-regular);
+  font-weight: var(--font-weight-regular);
+}
+
+input[type="checkbox"]:hover ~ .checkbox__check-mark {
+  border: 2px solid var(--text-900);
+  background-color: var(--blue-grey-500);
+}
+
+input[type="checkbox"]:checked:hover ~ .checkbox__check-mark {
+  background-color: var(--text-900);
+}

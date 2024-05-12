@@ -1,0 +1,276 @@
+:host {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-family: var(--font-family-medium);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0;
+  min-width: 100px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+:host.button--l {
+  height: 48px;
+  line-height: var(--bd-txt-lg-line-height);
+  font-size: var(--bd-txt-lg-font-size);
+}
+
+:host.button--m {
+  height: 36px;
+  font-size: var(--bd-txt-md-font-size);
+  line-height: var(--bd-txt-md-line-height);
+}
+
+:host.button--s {
+  height: 32px;
+  font-size: var(--bd-txt-md-font-size);
+  line-height: var(--bd-txt-md-line-height);
+}
+
+:host.button--xs {
+  height: 28px;
+  font-size: var(--bd-txt-md-font-size);
+  line-height: var(--bd-txt-md-line-height);
+}
+
+:host.button__body--active {
+  outline: 1px solid var(--blue-grey-600);
+}
+
+.button__body {
+  all: inherit;
+  margin: unset;
+  padding: unset;
+  position: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family-medium);
+  font-weight: var(-font-weight-medium);
+}
+
+.button__overlay-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, -100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__overlay {
+  width: 100%;
+  background-color: var(--black);
+  opacity: 0.1;
+  aspect-ratio: 1;
+  transform: scale(1);
+  border-radius: 50%;
+}
+
+:host-context(.button--l) .button__body {
+  padding: 0 16px;
+}
+
+:host-context(.button--m) .button__body {
+  padding: 0 16px;
+}
+
+:host-context(.button--s) .button__body {
+  padding: 0 12px;
+}
+
+:host-context(.button--xs) .button__body {
+  padding: 0 12px;
+}
+
+:host.button--primary {
+  background-color: var(--primary-brand-color);
+  color: var(--white);
+}
+
+:host.button--secondary {
+  background-color: var(--secondary-blue);
+  color: var(--primary-brand-color);
+}
+
+:host.button--tertiary {
+  background-color: var(--white);
+  color: var(--primary-brand-color);
+  border: 1px solid var(--secondary-blue);
+  border: none;
+}
+
+:host.button--primary:hover {
+  background-color: var(--blue-grey-900);
+}
+
+:host.button--secondary:hover {
+  background-color: var(--blue-grey-500);
+}
+
+:host.button--tertiary:hover {
+  background-color: var(--blue-grey-400);
+}
+
+:host.button--qualified {
+  background-color: var(--info-blue);
+}
+
+:host-context(.button--qualified) button:disabled {
+  background-color: var(--text-300);
+  color: var(--text-700);
+  user-select: none;
+}
+
+:host.button--active {
+  background-color: var(--success-green);
+}
+
+:host-context(.button--active) button:disabled {
+  background-color: var(--text-300);
+  color: var(--text-700);
+  user-select: none;
+}
+
+:host.button--disqualified {
+  background-color: var(--error-red);
+}
+
+:host-context(.button--disqualified) button:disabled {
+  background-color: var(--text-300);
+  color: var(--text-700);
+  user-select: none;
+}
+
+:host-context(.button--primary) button:disabled {
+  background-color: var(--text-400);
+  color: var(--text-700);
+  user-select: none;
+}
+
+:host-context(.button--secondary) button:disabled {
+  background-color: var(--text-400);
+  color: var(--text-700);
+  user-select: none;
+}
+
+:host-context(.button--tertiary) button:disabled {
+  border: 1px solid var(--text-400);
+  background-color: var(--white);
+  color: var(--text-600);
+  user-select: none;
+}
+
+:host-context(.button--tertiary) .button__body {
+  border: 1px solid var(--secondary-blue);
+}
+
+:host.button--primary-default {
+  background-color: var(--btn-default);
+  color: var(--white);
+}
+
+:host.button--primary-alert {
+  background-color: var(--btn-alert);
+  color: var(--white);
+}
+
+:host.button--primary-calling {
+  background-color: var(--btn-calling);
+  color: var(--white);
+}
+
+:host.button--primary-proceed {
+  background-color: var(--btn-proceed);
+  color: var(--white);
+}
+
+:host.button--primary-default:hover {
+  background-color: var(--blue-grey-900);
+}
+
+:host-context(.button--primary-default) button:disabled {
+  background-color: var(--text-400);
+  color: var(--text-700);
+  user-select: none;
+}
+
+:host.button--primary-alert:hover {
+  background-color: var(--copper-red);
+}
+
+:host-context(.button--primary-alert) button:disabled {
+  background-color: var(--text-400);
+  color: var(--text-700);
+  user-select: none;
+}
+
+:host.button--primary-proceed:hover {
+  background-color: var(--text-900);
+}
+
+:host-context(.button--primary-proceed) button:disabled {
+  background-color: var(--text-400);
+  color: var(--text-700);
+  user-select: none;
+}
+
+:host.button--primary-calling:hover {
+  background-color: var(--lunar-green);
+}
+
+:host-context(.button--primary-calling) button:disabled {
+  background-color: var(--text-400);
+  color: var(--text-700);
+  user-select: none;
+}
+
+.button__icon {
+  position: relative;
+  top: 4px;
+}
+
+.button__option-with-text {
+  margin-left: 8px;
+  margin-bottom: 2px;
+}
+
+.icon--disabled {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.show-above-overlay {
+  position: relative;
+  z-index: 1001;
+}
+
+.dropdown__card {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0;
+  margin-top: 14px;
+  overflow-y: auto;
+  width: 200px;
+  margin-bottom: 14px;
+}
+
+.dropdown__item {
+  width: 100%;
+}
+
+:host.button--disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+.button__dropdown {
+  margin-left: 8px;
+}
